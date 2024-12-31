@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <p id="person-info"></p>
+        </div>
+    </main>
+    <script>
+
+        class Neko {
+            #id;
+            #name;
+            static #disabled = false;
+            constructor(id = 0, name = '') {
+                this.#id = id;
+                this.#name = name;
+            }
+            get name() {
+                return this.#name;
+            }
+            say(str = '') {
+                if(str != '') return `id: ${this.#id} -> ${str}`;
+                return `id: ${this.#id} -> にゃー`;
+            }
+            #check() {
+                return 'check';
+            }
+            static isDisabled() {
+                return this.#disabled;
+            }
+        }
+        const neko = new Neko(1, 'くろちゃん');
+        console.log(neko.say());
+        console.log(Neko.isDisabled());
+
+        
+        class Usagi {
+            static #disabled = false;
+            constructor() {
+            }
+            #check() {
+                return 'check';
+            }
+            static isDisabled() {
+                return this.#disabled;
+            }
+        }
+
+        console.log(Usagi.isDisabled());
+
+    </script>
+</body>
+
+</html>

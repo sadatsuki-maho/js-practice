@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <p id="person-info"></p>
+        </div>
+    </main>
+    <script>
+        let map = new Map();
+        map.set('file', 'abc.png');
+        map.set('size', [1200, 800]);
+        map.set('alt', 'abc画像');
+        console.log(map);
+        console.log(map.size);
+        console.log(map.size);
+
+        let file = map.get('file');
+
+        console.log(file);
+
+        const set = new Set().add(1).add(2).add(5);
+        console.log(set);
+        set.add(3).add(4);
+        console.log(set);
+    </script>
+</body>
+
+</html>

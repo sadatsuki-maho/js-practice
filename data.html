@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <p>test</p>
+        </div>
+    </main>
+    <script>
+        // データ型
+        // null型
+        const null_element  = document.querySelector("#noneId");
+        console.log(null_element);
+        // undefined型
+        let undefined_var;
+        console.log(undefined_var);
+        // Boolean型
+        console.log(Boolean(0));
+        console.log(Boolean(1));
+        // Number型
+        console.log(11);
+        console.log(12);
+        console.log(13);
+        // BigInt型
+        console.log(BigInt(900710000000000));
+        console.log(BigInt(900710000000001));
+        console.log(BigInt(900710000000002));
+        // String型
+        console.log('JavaScript');
+        console.log("JavaScript");
+        console.log(`JavaScript`);
+        // Symbol型
+        const symbol1 = Symbol('シンボル');
+        const symbol2 = Symbol('シンボル');
+        console.log(symbol1 == symbol2); //1と2同じではないとして判定
+        // オブジェクト型
+        // object
+        const article = {
+            title: 'さすがに',
+            description: 'ああああああああああああ'
+        };
+        console.log(article.title);
+        article.title = '変更後のさすがに';
+        console.log(article.title);
+        article.size = 150;
+        console.log(article.size);
+
+        const user = {
+            userId: 123,
+            name: 'Sadatsuki',
+            getName: function(id) {
+                if(id == this.userId) {
+                    return this.name;
+                }
+                return 'idが異なります';
+            }
+        }
+        console.log(user.getName('111'));
+        console.log(user.getName('123'));
+        // array
+        const books = ['venom1', 'venom2', 'venom3'];
+        console.log(books[0]);
+        console.log(books[1]);
+        // function
+        function unit_price(sub_total, qty) {
+            return sub_total * qty;
+        }
+        console.log(typeof symbol1);
+        console.log(typeof books);
+        console.log(typeof unit_price);
+
+        let user_name;
+        user_name = user.name ?? 'Yamada Taro';
+
+        let flag = true;
+        console.log(!flag);
+
+        //オプショナルチェーンによりエラーにならない
+        const user_id = user?.userId;
+
+        //分割代入
+        const [book1, book2] = books;
+        console.log(book1);
+        console.log(book2);
+
+        const account = {
+            id: 1234,
+            name: 'Maho',
+            created_at: '2024-12-31'
+        };
+        const {id, name} = account;
+        console.log(id);
+        console.log(name);
+
+        // スプレッド構文を使った代入
+        const [b1, ...bother] = books;
+        console.log(b1);
+        console.log(bother);
+
+        // date
+
+        // json
+        // map
+        // set
+
+    </script>    
+</body>
+</html>

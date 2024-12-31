@@ -1,0 +1,18 @@
+■JavaScriptとはなにか
+JavaScriptはWebブラウザに搭載された言語として作られた。
+現在ではWebブラウザ問わずなんでもできる言語。
+
+■JavaScriptの基本文法
+・半角英数字。大文字と小文字は区別される。
+・文末にはセミコロンをつける。ただし制御構造の構文：for, while, if else, switch, try catch は省略できる。
+・コメント文
+
+■JavaScriptのデータ型
+・null型
+・undefined型
+・Boolean型
+・Number型
+・BigInt型
+・String型
+・Symbol型
+・オブジェクト型

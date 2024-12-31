@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <p id="person-info"></p>
+            <button id="btn">ボタン</button>
+        </div>
+    </main>
+    <script>
+        function plus1(x) {
+            return x + 2;
+        }
+        //アロー関数化
+        const plus2 = (x) => {
+            return x + 2;
+        }
+
+        //アロー関数: 引数が一つの場合は丸括弧を省略可能
+        const plus3 = x => {
+            return x + 2;
+        }
+
+        //アロー関数: 処理がreturn行しかない場合は波括弧とreturn文を省略可能
+        const plus4 = x => x + 2;
+        console.log(plus1(3));
+        console.log(plus2(3));
+        console.log(plus3(3));
+        console.log(plus4(3));
+
+        //スプレッド構文を使うと引数を無限に増やせる
+        function multiArgs(a, ...args) {
+            console.log(a);
+            console.log(args);
+        }
+
+        multiArgs(1, 2, 3, 4, 5);
+
+        // 引数の数を数える
+        function multiArgs2(a, ...args) {
+            console.log(arguments.length);
+        }
+        multiArgs2(1, 2, 3, 4, 5);
+        multiArgs2(1, 2, 3, 4, 5, 6, 7);
+
+        //引数にオブジェクトをつけとる
+        const person = {
+            id: 12345,
+            grade: 'b',
+            firstName: 'Maho',
+            lastName: 'Sadatsuki'
+        };
+        function showPersonInfo(info) {
+            const infoText = 'ID: ' + info.id + ' / 等級: ' + info.grade;
+            return infoText;
+        }
+        const infoElement = document.querySelector('#person-info');
+        // infoElement.textContent = showPersonInfo(person);
+
+        //必要なオブジェクトプロパティのみを引数として受け取る
+        function showPersonInfo2({id, grade}) {
+            const infoText = 'ID: ' + id + ' / 等級: ' + grade;
+            return infoText;
+        }
+        infoElement.textContent = showPersonInfo2(person);
+
+        // 引数がプリミティブ型であれば値渡しに、オブジェクト型の場合は参照渡しになる
+
+        // コールバック関数: addEventListener()メソッドでclickイベントを設定
+        document.querySelector('#btn').addEventListener('click', (e) => {
+            alert('ボタンがクリックされました。');
+        });
+
+        // 即時実行関数
+        (function(param) {
+            console.log('即時関数実行: ' + param);
+        })('autorun');
+
+    </script>
+</body>
+
+</html>

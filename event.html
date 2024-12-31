@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <p id="person-info"></p>
+            <button id="">ボタン</button>
+            <input type="number" name="" id="btn">
+        </div>
+    </main>
+    <script>
+        document.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            const key = e.key;
+            console.log(e.key);
+            if(e.key == 'Tab')
+            {
+                console.log('タブ');
+            }
+        });
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            console.log('click');
+        });
+        btn.addEventListener('blur', () => {
+            console.log('blur');
+        });
+        btn.addEventListener('focus', () => {
+            console.log('focus');
+        });
+
+    </script>
+</body>
+
+</html>
